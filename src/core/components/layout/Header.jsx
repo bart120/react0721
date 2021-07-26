@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Navbar, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export default class Header extends Component {
     render() {
@@ -9,10 +10,10 @@ export default class Header extends Component {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#">Accueil</Nav.Link>
-                        <Nav.Link href="#">Voitures</Nav.Link>
-                        <Nav.Link href="#">Ajouter</Nav.Link>
-                        <Nav.Link href="#">Connexion</Nav.Link>
+                        <Link className="nav-link" to="/">Accueil</Link>
+                        <Link className="nav-link" to="/cars/list">Voitures</Link>
+                        <Link className="nav-link" to="/cars/add">Ajouter</Link>
+                        <Link className="nav-link" to="/auth/login">Connexion</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
