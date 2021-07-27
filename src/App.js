@@ -5,7 +5,7 @@ import './App.css';
 import Footer from './core/components/layout/Footer';
 import Header from './core/components/layout/Header';
 import MainRoutes from './core/routes/MainRoutes';
-
+import { Container } from 'react-bootstrap';
 
 class App extends React.Component {
 
@@ -13,9 +13,9 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Header />
-
-        <MainRoutes />
-
+        <Container>
+          <MainRoutes />
+        </Container>
         <Footer />
       </BrowserRouter>
     );

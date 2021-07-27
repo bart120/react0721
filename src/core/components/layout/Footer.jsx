@@ -22,7 +22,7 @@ export default class Footer extends Component {
                 <div>&copy; Formation React</div>
                 <Row>
                     {this.state.brands.map((item) =>
-                    (<Col>
+                    (<Col key={item.name}>
                         <Card style={{ width: '18rem' }}>
                             <Card.Img variant="top" src={`/images/${item.image}`} />
                             <Card.Body>
