@@ -1,8 +1,9 @@
 import axios from "axios";
+import BaseService from "./BaseService";
 
 const url = 'https://formation.inow.fr/demo/api/v1/brands';
 
-export default class BrandsService {
+export default class BrandsService extends BaseService {
 
 
 
