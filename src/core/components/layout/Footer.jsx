@@ -1,19 +1,29 @@
 import React, { Component } from 'react'
 import { Row, Col, Card } from 'react-bootstrap'
+import BrandsService from '../../services/BrandsService';
 
 export default class Footer extends Component {
+
+    servBrand = new BrandsService();
 
     state = { brands: [], ageDuCapitaine: 42 }
 
     componentDidMount() {
+        this.servBrand.getBrands().then((data) => {
+            //console.log(data);
+            this.setState({ brands: data });
+        });
+
+        //this.setState({ brands: data });
+        //console.log("fin didMount");
         //state = { brands: [{name='toto', }]}
-        this.setState({
+        /*this.setState({
             brands: [
                 { name: 'Audi', image: 'audi.jpg' },
                 { name: 'BMW', image: 'bmw.jpg' },
                 { name: 'Renault', image: 'renault.jpg' }
             ]
-        });
+        });*/
     }
 
     render() {
