@@ -20,5 +20,9 @@ export default class CarsService extends BaseService {
         return axios.post(url, car).then(this.promiseResolve).catch(this.promiseReject);
     }
 
+    deleteCarById(id) {
+        return axios.delete(`${url}/${id}`).then(this.promiseResolve).catch(this.promiseReject)
+    }
+
 
 }

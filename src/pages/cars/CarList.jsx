@@ -15,6 +15,22 @@ export default class CarList extends Component {
         });
     }
 
+    delete = (id) => {
+        //console.log(id);
+        this.servCar.deleteCarById(id).then((data) => {
+            alert(`La voiture ${data.model} est supprimée.`);
+            //1
+            /*this.servCar.getCars().then(data => {
+                this.setState({ cars: data.sort((a, b) => { return a.price > b.price ? -1 : 1 }) });
+            });*/
+
+            //2
+            const tab = this.state.cars;
+            tab.splice(tab.findIndex(x => x.id === id), 1);
+            this.setState({ cars: tab });
+        });
+    }
+
     dateFormat = (value) => {
         return new Date(value).toLocaleDateString('fr-FR');
     }
@@ -43,6 +59,7 @@ export default class CarList extends Component {
                                     <td>{this.dateFormat(car.dateOfCirculation)}</td>
                                     <td>
                                         <Link to={`/cars/detail/${car.id}`} className="btn btn-primary">Détail</Link>
+                                        <button className="btn btn-danger" onClick={() => this.delete(car.id)}>Suppr.</button>
                                     </td>
                                 </tr>
                             )
