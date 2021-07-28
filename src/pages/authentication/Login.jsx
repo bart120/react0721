@@ -4,8 +4,6 @@ import InputMail from '../../core/components/forms/InputMail'
 
 export default class Login extends Component {
 
-
-
     log = { login: '', password: '' };
 
     constructor() {
