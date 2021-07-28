@@ -35,7 +35,6 @@ export default class CarDetail extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div>
                 <h1>Voiture {this.state.car?.model}</h1>

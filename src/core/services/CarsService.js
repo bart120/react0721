@@ -13,5 +13,12 @@ export default class CarsService extends BaseService {
         return axios.get(`${url}/${id}`).then(this.promiseResolve).catch(this.promiseReject);
     }
 
+    saveCar(car) {
+        car.price = +car.price;
+        car.brandID = +car.brandID;
+        console.log(car);
+        return axios.post(url, car).then(this.promiseResolve).catch(this.promiseReject);
+    }
+
 
 }
