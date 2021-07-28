@@ -17,6 +17,7 @@ export default class CarAdd extends Component {
         ev.preventDefault();
         console.log(this.car);
         this.servCar.saveCar(this.car).then((data) => {
+            this.props.history.push('/cars/list');
             alert(`La voiture est enregistrée avec l'ID ${data.id}`);
         });
     }
@@ -33,6 +34,7 @@ export default class CarAdd extends Component {
 
 
     render() {
+        //console.log(this.props);
         return (
             <div>
                 <h1>Ajouter une voiture</h1>
