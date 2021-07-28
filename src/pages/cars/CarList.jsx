@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CarsService from '../../core/services/CarsService';
 import { Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export default class CarList extends Component {
 
@@ -29,6 +30,7 @@ export default class CarList extends Component {
                             <th>Modèle</th>
                             <th>Prix</th>
                             <th>Date de mise en circulation</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,6 +41,9 @@ export default class CarList extends Component {
                                     <td>{car.model}</td>
                                     <td>{car.price} €</td>
                                     <td>{this.dateFormat(car.dateOfCirculation)}</td>
+                                    <td>
+                                        <Link to={`/cars/detail/${car.id}`} className="btn btn-primary">Détail</Link>
+                                    </td>
                                 </tr>
                             )
                         })}

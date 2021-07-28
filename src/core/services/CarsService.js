@@ -9,5 +9,9 @@ export default class CarsService extends BaseService {
         return axios.get(url).then(this.promiseResolve).catch(this.promiseReject);
     }
 
+    getCarById(id) {
+        return axios.get(`${url}/${id}`).then(this.promiseResolve).catch(this.promiseReject);
+    }
+
 
 }

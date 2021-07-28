@@ -22,6 +22,10 @@ export default class BrandsService extends BaseService {
         ];*/
     }
 
+    getBrandById(id) {
+        return axios.get(`${url}/${id}`).then(this.promiseResolve).catch(this.promiseReject);
+    }
+
     promiseResolve(resp) {
         if (resp.data == null) {
             return Promise.reject('La ressource est introuvable');
