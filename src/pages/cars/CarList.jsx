@@ -59,7 +59,7 @@ export default class CarList extends Component {
                                     <td>{this.dateFormat(car.dateOfCirculation)}</td>
                                     <td>
                                         <Link to={`/cars/detail/${car.id}`} className="btn btn-primary">Détail</Link>
-                                        <button className="btn btn-danger" onClick={() => this.delete(car.id)}>Suppr.</button>
+                                        <button className="btn btn-danger" onClick={() => { this.delete(car.id); }}>Suppr.</button>
                                     </td>
                                 </tr>
                             )
